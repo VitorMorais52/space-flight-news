@@ -23,7 +23,9 @@ function Home() {
 
   return (
     <Container>
-      <span>Home</span>
+      <div className="content">
+        <h1>Home</h1>
+      </div>
     </Container>
   );
 }

@@ -8,8 +8,19 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
 
+    :root {
+        --white: #ffffff;
+        --pumpkin: #d07017;
+        --gray-100: #e1e1e6;
+        --gray-300: #a8a8b3;
+        --gray-900: #1e2022;
+        --cyan-500: #61dafb;
+        --blue-900: #302e53;
+    }
 
     body {
+        background: var(--cyan-500);
+        color: var(--gray-100);
         -webkit-font-smoothing: antialiased;
     }
 
@@ -24,17 +35,16 @@ export const GlobalStyle = createGlobalStyle`
         line-height: 40px;;
     }
 
-    .App{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: #e1e0e0;
-        
-        main {
-            margin-top: 6rem;
+    @media (max-width: 1080px) {
+        html {
+            font-size: 93.75%;
         }
+    }
 
+    @media (max-width: 720px) {
+        html {
+            font-size: 87.5%;
+        }
     }
 
     .react-modal-overlay {
