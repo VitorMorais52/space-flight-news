@@ -1,15 +1,13 @@
 import { useEffect, useState } from "react";
 import Modal from "react-modal";
+import { useModal } from "../../hooks/useModal";
 
 //styles
 // import closeImg from "../../../assets/close.svg";
+import { Container } from "./styles";
 
-type ModalComponentProps = {
-  isOpen: boolean;
-  onRequestClose: () => void;
-};
-
-const ModalComponent = ({ isOpen, onRequestClose }: ModalComponentProps) => {
+const BlogModal = () => {
+  const { isOpen, onRequestClose } = useModal();
   return (
     <Modal
       isOpen={isOpen}
@@ -25,9 +23,9 @@ const ModalComponent = ({ isOpen, onRequestClose }: ModalComponentProps) => {
         {/* <img src={closeImg} alt="Fechar modal" /> */}
         close
       </button>
-      <div className="content"></div>
+      <Container>conteudo</Container>
     </Modal>
   );
 };
 
-export default ModalComponent;
+export default BlogModal;
