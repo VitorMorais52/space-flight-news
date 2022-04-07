@@ -37,6 +37,27 @@ export const Container = styled.div<BlogProps>`
   .double-in-line {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 4px;
+  }
+
+  .link {
+    padding: 4px;
+
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--blue-900);
+
+    border-color: rgba(48, 46, 83, 0.5);
+    background: var(--white);
+    border: 1px solid;
+    border-radius: 4px;
+
+    transition: filter 0.3s;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
   }
 
   .img-container {

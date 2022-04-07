@@ -1,5 +1,8 @@
 import Modal from "react-modal";
 
+//utils
+import { dateFormatToShow } from "../../utils/formatFunctions";
+
 //types
 import { BlogProps } from "../../types/Blog";
 
@@ -26,7 +29,7 @@ function BlogModal({ isOpen, onRequestClose, blog }: BlogModalProps) {
         </div>
         <div className="text">
           <h2>{blog.title}</h2>
-          <span>{blog.publishedAt}</span>
+          <span>{dateFormatToShow(blog.publishedAt)}</span>
           <span>{blog.summary}</span>
           <a href={blog.url} target="_blank" className="visit-site">
             Ir para o site

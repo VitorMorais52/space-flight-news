@@ -27,6 +27,12 @@ export const Footer = styled.div`
     border: 2px solid;
     border-color: rgba(48, 46, 83, 0.5);
     background-color: rgba(48, 46, 83, 0.2);
+
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 
   .load-more {

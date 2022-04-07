@@ -34,10 +34,6 @@ function Home() {
     { staleTime: 1000 * 60 /* 1 minute */ }
   );
 
-  const loadMoreItems = () => {
-    setLimitItems(limitItems + 10);
-  };
-
   useEffect(() => {
     queryClient.fetchQuery("blogs");
   }, [filters, limitItems]);
@@ -60,7 +56,10 @@ function Home() {
         {Array.from({ length: 3 }).map((_, index) => (
           <div className="square" key={index} />
         ))}
-        <button className="load-more" onClick={loadMoreItems}>
+        <button
+          className="load-more"
+          onClick={() => setLimitItems(limitItems + 10)}
+        >
           Carregar mais
         </button>
       </Footer>

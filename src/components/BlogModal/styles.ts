@@ -39,11 +39,12 @@ export const Container = styled.div`
   .visit-site {
     margin-top: 1rem;
     padding: 1rem;
-    max-width: 150px;
+    max-width: 130px;
 
     display: flex;
     justify-content: center;
 
+    font-weight: normal;
     color: var(--white);
     background: var(--blue-900);
     border: none;
