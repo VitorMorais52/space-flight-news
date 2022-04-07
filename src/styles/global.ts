@@ -20,9 +20,15 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         -webkit-font-smoothing: antialiased;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     body, input, button, textarea {
+
+
         font-family: 'Roboto Condensed', sans-serif;
         font-weight: 400;
         color: var(--blue-900);

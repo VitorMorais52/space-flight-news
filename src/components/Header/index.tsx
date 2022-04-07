@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 //@mui components
 import Divider from "@mui/material/Divider";
@@ -17,8 +17,22 @@ import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 //styles
 import { Container } from "./styles";
 
-function Header() {
-  const [filterDate, setFilterDate] = useState("recent");
+type Filters = {
+  title_contains: string;
+  _sort: string;
+};
+
+type HeaderProps = {
+  filters: Filters;
+  changeFilters: (filters: Filters) => void;
+};
+
+function Header({ filters, changeFilters }: HeaderProps) {
+  const [title, setTitle] = useState("");
+
+  const changeTitleFilter = () => {
+    changeFilters({ ...filters, title_contains: title });
+  };
 
   return (
     <Container>
@@ -26,13 +40,13 @@ function Header() {
         <FormControl className="form-control" variant="outlined">
           <InputLabel htmlFor="outlined-adornment-search">Search</InputLabel>
           <OutlinedInput
-            value={""}
-            onChange={() => {}}
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
             sx={{ paddingRight: "6px" }}
             endAdornment={
               <InputAdornment position="end">
                 <IconButton
-                  type="submit"
+                  type="button"
                   sx={{
                     p: "10px",
                     backgroundColor: "#302e53",
@@ -40,6 +54,7 @@ function Header() {
                     color: "white",
                   }}
                   aria-label="search"
+                  onClick={changeTitleFilter}
                 >
                   <SearchIcon />
                 </IconButton>
@@ -50,14 +65,14 @@ function Header() {
         </FormControl>
 
         <Select
-          value={filterDate}
-          onChange={(e) => setFilterDate(e.target.value)}
+          value={filters._sort}
+          onChange={(e) => changeFilters({ ...filters, _sort: e.target.value })}
           displayEmpty
           inputProps={{ "aria-label": "filter date" }}
           sx={{ width: "200px" }}
         >
-          <MenuItem value="recent">Mais novas</MenuItem>
-          <MenuItem value="old">Mais antigas</MenuItem>
+          <MenuItem value="">Mais novas</MenuItem>
+          <MenuItem value="publishedAt">Mais antigas</MenuItem>
         </Select>
       </div>
       <a href="#" className="logo">
