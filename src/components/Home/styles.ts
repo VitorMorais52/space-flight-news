@@ -7,12 +7,12 @@ export const Container = styled.main`
 
   .content {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
+    max-width: 1365px;
     width: 1365px;
-    margin-top: 2rem;
-
-    background-color: purple;
+    margin: 2rem;
   }
 `;

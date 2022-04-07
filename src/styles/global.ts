@@ -19,8 +19,6 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background: var(--cyan-500);
-        color: var(--gray-100);
         -webkit-font-smoothing: antialiased;
     }
 
@@ -32,7 +30,7 @@ export const GlobalStyle = createGlobalStyle`
     h1, h2, h3, h4, h5, h6 {
         font-size: 28px;
         font-weight: 300;
-        line-height: 40px;;
+        line-height: 40px;
     }
 
     @media (max-width: 1080px) {
@@ -70,7 +68,6 @@ export const GlobalStyle = createGlobalStyle`
         border-radius: 0.24rem;
         background-color: rgba(149, 69, 255, 0.9);
         background-image: linear-gradient(to right, purple , rgb(108, 0, 255));
-
     }
 
     .react-modal-close {
@@ -86,7 +83,4 @@ export const GlobalStyle = createGlobalStyle`
             filter: brightness(0.8);
         }
     }
-
- 
-
 `;

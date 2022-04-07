@@ -1,9 +1,15 @@
-import axios from "axios";
 import { useQuery } from "react-query";
+
+//services
 import api from "../../services/api";
 
+//types
 import { BlogProps } from "../../types/Blog";
 
+//components
+import Header from "../Header";
+
+//styles
 import { Container } from "./styles";
 
 function Home() {
@@ -24,6 +30,7 @@ function Home() {
   return (
     <Container>
       <div className="content">
+        <Header />
         <h1>Home</h1>
       </div>
     </Container>
