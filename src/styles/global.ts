@@ -25,11 +25,12 @@ export const GlobalStyle = createGlobalStyle`
     body, input, button, textarea {
         font-family: 'Roboto Condensed', sans-serif;
         font-weight: 400;
+        color: var(--blue-900);
     }
 
     h1, h2, h3, h4, h5, h6 {
         font-size: 28px;
-        font-weight: 300;
+        font-weight: 400;
         line-height: 40px;
     }
 
@@ -43,6 +44,10 @@ export const GlobalStyle = createGlobalStyle`
         html {
             font-size: 87.5%;
         }
+    }
+
+    button {
+        cursor: pointer;
     }
 
     .react-modal-overlay {
@@ -62,12 +67,11 @@ export const GlobalStyle = createGlobalStyle`
 
     .react-modal-content {
         width:100%;
-        max-width: 570px;
-        padding: 3rem;
+        max-width: 700px;
+        padding: 4rem;
         position: relative;
         border-radius: 0.24rem;
-        background-color: rgba(149, 69, 255, 0.9);
-        background-image: linear-gradient(to right, purple , rgb(108, 0, 255));
+        background-color: var(--white);
     }
 
     .react-modal-close {
@@ -80,7 +84,7 @@ export const GlobalStyle = createGlobalStyle`
         cursor: pointer;
 
         &:hover {
-            filter: brightness(0.8);
+            filter: opacity(0.8);
         }
     }
 `;

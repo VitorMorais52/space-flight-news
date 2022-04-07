@@ -1,10 +1,25 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+const defineOrder = (index: number) => {
+  const order = index % 2 === 0 ? 1 : -1;
+  return order;
+};
+
+type BlogProps = {
+  index: number;
+};
+
+export const Container = styled.div<BlogProps>`
   max-width: 800px;
 
-  display: flex;
+  display: grid;
+  grid-template-columns: ${({ index }) =>
+    defineOrder(index) === 1 ? "auto 1.5fr" : "1.5fr auto"};
   gap: 2rem;
+
+  justify-content: space-between;
+  justify-items: ${({ index }) => (defineOrder(index) === 1 ? "start" : "end")};
+
   font-weight: 600;
   text-align: justify;
 
@@ -16,6 +31,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    order: ${({ index }) => defineOrder(index)};
   }
 
   .double-in-line {
@@ -28,7 +44,8 @@ export const Container = styled.div`
     width: 300px;
 
     display: flex;
-    justify-content: start;
+    justify-content: ${({ index }) =>
+      defineOrder(index) === 1 ? "start" : "end"};
 
     img {
       max-height: 300px;
@@ -36,19 +53,14 @@ export const Container = styled.div`
     }
   }
 
-  .visit-site {
-    margin-top: 1rem;
+  .show-more {
     padding: 1rem;
-    max-width: 150px;
-
-    display: flex;
-    justify-content: center;
+    max-width: 100px;
 
     color: var(--white);
     background: var(--blue-900);
     border: none;
     border-radius: 4px;
-    text-decoration: none;
 
     transition: filter 0.3s;
 

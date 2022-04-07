@@ -7,8 +7,8 @@ export type BlogProps = {
   id: number;
   title: string;
   url: string;
-  imgUrl: string;
-  newSite: string;
+  imageUrl: string;
+  newsSite: string;
   summary: string;
   publishedAt: string;
   launches: ItemProps[];

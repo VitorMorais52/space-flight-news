@@ -16,3 +16,11 @@ export const Container = styled.main`
     margin: 2rem;
   }
 `;
+
+export const GridBlog = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+`;

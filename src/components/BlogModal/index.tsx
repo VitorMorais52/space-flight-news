@@ -1,13 +1,18 @@
-import { useEffect, useState } from "react";
 import Modal from "react-modal";
-import { useModal } from "../../hooks/useModal";
+
+//types
+import { BlogProps } from "../../types/Blog";
 
 //styles
-// import closeImg from "../../../assets/close.svg";
 import { Container } from "./styles";
 
-const BlogModal = () => {
-  const { isOpen, onRequestClose } = useModal();
+type BlogModalProps = {
+  isOpen: boolean;
+  onRequestClose: () => void;
+  blog: BlogProps;
+};
+
+function BlogModal({ isOpen, onRequestClose, blog }: BlogModalProps) {
   return (
     <Modal
       isOpen={isOpen}
@@ -15,17 +20,21 @@ const BlogModal = () => {
       overlayClassName="react-modal-overlay"
       className="react-modal-content"
     >
-      <button
-        type="button"
-        onClick={onRequestClose}
-        className="react-modal-close"
-      >
-        {/* <img src={closeImg} alt="Fechar modal" /> */}
-        close
-      </button>
-      <Container>conteudo</Container>
+      <Container>
+        <div className="img-container">
+          <img src={blog.imageUrl} alt={"post image"} />
+        </div>
+        <div className="text">
+          <h2>{blog.title}</h2>
+          <span>{blog.publishedAt}</span>
+          <span>{blog.summary}</span>
+          <a href={blog.url} target="_blank" className="visit-site">
+            Ir para o site
+          </a>
+        </div>
+      </Container>
     </Modal>
   );
-};
+}
 
 export default BlogModal;

@@ -2,12 +2,18 @@ import styled from "styled-components";
 
 export const Container = styled.header`
   width: 100%;
+  margin-bottom: 3.5rem;
+
   display: flex;
   flex-direction: column;
   align-items: center;
 
+  button {
+    transition: filter 0.3s;
+  }
+
   button:hover {
-    background-color: #302e53;
+    background-color: var(--blue-900);
     filter: opacity(0.8);
   }
 
@@ -34,16 +40,18 @@ export const Container = styled.header`
   }
 
   .logo {
-    margin-top: 2.5rem;
+    margin-top: 3.5rem;
+    padding: 2rem;
+
     max-width: 200px;
     max-height: 200px;
     overflow: hidden;
 
-    padding: 2rem;
-
     border: 1px solid;
     border-radius: 50%;
     border-color: rgba(0, 0, 0, 0.2);
+
+    transition: filter 0.3s;
 
     svg {
       width: 100px;
