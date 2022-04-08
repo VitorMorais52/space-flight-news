@@ -1,5 +1,6 @@
-import Modal from "react-modal";
+import { useEffect, useState } from "react";
 import { useQuery, useQueryClient } from "react-query";
+import Modal from "react-modal";
 
 //services
 import api from "../../services/api";
@@ -10,10 +11,10 @@ import { BlogProps } from "../../types/Blog";
 //components
 import Header from "../Header";
 import Blog from "../Blog";
+import LoadingBlog from "../LoadingBlog";
 
 //styles
 import { Main, GridBlog, Footer } from "./styles";
-import { useEffect, useState } from "react";
 
 Modal.setAppElement("#root");
 
@@ -25,7 +26,7 @@ function Home() {
 
   const params = { _limit: limitItems, ...filters };
 
-  const { data, isFetching } = useQuery<BlogProps[]>(
+  const { data } = useQuery<BlogProps[]>(
     "blogs",
     async () => {
       const response = await api.get("/blogs", { params });
@@ -46,10 +47,13 @@ function Home() {
       />
       <Main>
         <GridBlog>
-          {data &&
+          {data ? (
             data.map((blog, index) => (
               <Blog blog={blog} index={index} key={blog.id} />
-            ))}
+            ))
+          ) : (
+            <LoadingBlog quantityItems={10} />
+          )}
         </GridBlog>
       </Main>
       <Footer>
