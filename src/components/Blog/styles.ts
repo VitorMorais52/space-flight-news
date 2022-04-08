@@ -54,8 +54,9 @@ export const Container = styled.div<BlogProps>`
 
   .double-in-line {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: flex-end;
+    gap: 1rem;
     margin-bottom: 4px;
 
     @media (max-width: 480px) {
