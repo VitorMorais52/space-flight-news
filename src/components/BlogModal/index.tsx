@@ -6,6 +6,9 @@ import { dateFormatToShow } from "../../utils/formatFunctions";
 //types
 import { BlogProps } from "../../types/Blog";
 
+//components
+import Image from "../../components/Image";
+
 //styles
 import { Container } from "./styles";
 
@@ -25,7 +28,7 @@ function BlogModal({ isOpen, onRequestClose, blog }: BlogModalProps) {
     >
       <Container>
         <div className="img-container">
-          <img src={blog.imageUrl} alt={"post image"} />
+          <Image src={blog.imageUrl} alt={"post image"} />
         </div>
         <div className="text">
           <h2>{blog.title}</h2>

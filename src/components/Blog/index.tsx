@@ -8,6 +8,7 @@ import { BlogProps } from "../../types/Blog";
 
 //components
 import BlogModal from "../BlogModal";
+import Image from "../Image";
 
 //styles
 import { Container } from "./styles";
@@ -32,13 +33,7 @@ function Blog({ blog, index }: BlogComponentProps) {
     <>
       <Container index={index} key={blog.id}>
         <div className="img-container">
-          <img
-            srcSet={blog.imageUrl}
-            src={
-              "https://images.assetsdelivery.com/compings_v2/yehorlisnyi/yehorlisnyi2104/yehorlisnyi210400016.jpg"
-            }
-            alt={"post image"}
-          />
+          <Image src={blog.imageUrl} alt="post image" />
         </div>
         <div className="text">
           <h2>{blog.title}</h2>
