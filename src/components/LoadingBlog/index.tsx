@@ -1,6 +1,5 @@
 //@mui components
 import Skeleton from "@mui/material/Skeleton";
-import Stack from "@mui/material/Stack";
 
 //styles
 import { Container } from "./styles";
@@ -12,7 +11,7 @@ type LoadingBlogProps = {
 function LoadingBlog({ quantityItems }: LoadingBlogProps) {
   return (
     <>
-      {Array.from({ length: quantityItems }).map((item, index) => (
+      {Array.from({ length: quantityItems }).map((_, index) => (
         <Container index={index}>
           <div className="text">
             <Skeleton variant="text" height={"45px"} />
@@ -24,12 +23,7 @@ function LoadingBlog({ quantityItems }: LoadingBlogProps) {
             <Skeleton variant="text" />
             <Skeleton variant="text" height={"44px"} width={"100px"} />
           </div>
-          <Skeleton
-            className="container-img"
-            variant="rectangular"
-            width={300}
-            height={300}
-          />
+          <Skeleton className="img-container" variant="rectangular" />
         </Container>
       ))}
     </>

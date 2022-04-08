@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+
+import { Container } from "./styles";
 
 type ImageProps = {
   src: string;
@@ -12,7 +14,9 @@ function Image({ src, alt }: ImageProps) {
   const [srcImg, setSrcImg] = useState(src);
 
   return (
-    <img src={srcImg} alt={alt} onError={() => setSrcImg(srcImgNotFound)} />
+    <Container>
+      <img src={srcImg} alt={alt} onError={() => setSrcImg(srcImgNotFound)} />
+    </Container>
   );
 }
 
