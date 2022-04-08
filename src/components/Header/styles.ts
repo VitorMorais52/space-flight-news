@@ -1,15 +1,20 @@
 import styled from "styled-components";
 
 export const Container = styled.header`
+  margin-top: 2rem;
+  margin-bottom: 3.5rem;
+  padding: 0 2rem 0 2rem;
+
   max-width: 1365px;
   width: 1365px;
-  margin-top: 2rem;
-
-  margin-bottom: 3.5rem;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 1365px) {
+    width: 100vw;
+  }
 
   button {
     transition: filter 0.3s;
@@ -27,7 +32,6 @@ export const Container = styled.header`
 
   .top {
     width: 100%;
-
     display: flex;
     justify-content: flex-end;
     gap: 2rem;

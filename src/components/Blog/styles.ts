@@ -13,15 +13,25 @@ export const Container = styled.div<BlogProps>`
   max-width: 800px;
 
   display: grid;
+  gap: 2rem;
   grid-template-columns: ${({ index }) =>
     defineOrder(index) === 1 ? "auto 1.5fr" : "1.5fr auto"};
-  gap: 2rem;
 
-  justify-content: space-between;
-  justify-items: ${({ index }) => (defineOrder(index) === 1 ? "start" : "end")};
+  justify-items: ${({ index }) => (defineOrder(index) === 1 ? "end" : "start")};
 
   font-weight: 600;
   text-align: justify;
+
+  @media (min-width: 840px) {
+    width: 800px;
+  }
+
+  @media (max-width: 420px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
   h2 {
     font-weight: 700;
@@ -29,11 +39,17 @@ export const Container = styled.div<BlogProps>`
 
   .text {
     max-width: 400px;
-    width: 400px;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    order: ${({ index }) => defineOrder(index)};
+
+    @media (min-width: 420px) {
+      order: ${({ index }) => defineOrder(index)};
+    }
+    @media (max-width: 420px) {
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   .double-in-line {
@@ -41,12 +57,19 @@ export const Container = styled.div<BlogProps>`
     justify-content: space-between;
     align-items: flex-end;
     margin-bottom: 4px;
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
   }
 
   .link {
     padding: 4px;
 
     font-size: 14px;
+    text-align: center;
     text-decoration: none;
     color: var(--blue-900);
 
@@ -64,7 +87,6 @@ export const Container = styled.div<BlogProps>`
 
   .img-container {
     max-width: 300px;
-    width: 300px;
 
     display: flex;
     justify-content: ${({ index }) =>
@@ -73,6 +95,11 @@ export const Container = styled.div<BlogProps>`
     img {
       max-height: 300px;
       max-width: 300px;
+
+      @media (max-width: 720px) {
+        max-height: 200px;
+        max-width: 200px;
+      }
     }
   }
 

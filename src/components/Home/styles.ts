@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
-export const Main = styled.main`
-  max-width: 1365px;
-  width: 1365px;
-`;
+export const Main = styled.main``;
 
 export const GridBlog = styled.div`
+  padding: 0 2rem 0 2rem;
+
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -56,6 +56,13 @@ export const GlobalStyle = createGlobalStyle`
         cursor: pointer;
     }
 
+    .App{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
     .react-modal-overlay {
         background: rgba(0, 0, 0, 0.5);
         position: fixed;
