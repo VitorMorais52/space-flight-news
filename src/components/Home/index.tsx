@@ -13,7 +13,7 @@ import { BlogProps } from "../../types/Blog";
 
 //components
 import Header from "../Header";
-import Blog from "../Blog";
+import BlogList from "../BlogList";
 import LoadingBlog from "../LoadingBlog";
 
 //styles
@@ -52,13 +52,7 @@ function Home() {
       />
       <Main>
         <GridBlog>
-          {data ? (
-            data.map((blog, index) => (
-              <Blog blog={blog} index={index} key={blog.id} />
-            ))
-          ) : (
-            <LoadingBlog quantityItems={10} />
-          )}
+          {data ? <BlogList list={data} /> : <LoadingBlog quantityItems={10} />}
         </GridBlog>
       </Main>
       <Footer>
