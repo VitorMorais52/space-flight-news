@@ -3,18 +3,18 @@ import { useQuery, useQueryClient } from "react-query";
 import Modal from "react-modal";
 
 //hooks
-import useQueryParams from "../../hooks/useQueryParams";
+import useQueryParams from "../../../hooks/useQueryParams";
 
 //services
-import api from "../../services/api";
+import api from "../../../services/api";
 
 //types
-import { BlogProps } from "../../types/Blog";
+import { BlogProps } from "../../../types/Blog";
 
 //components
-import Header from "../Header";
-import BlogList from "../BlogList";
-import LoadingBlog from "../LoadingBlog";
+import Header from "../../common/Header";
+import BlogList from "../../common/BlogList";
+import LoadingBlog from "../../common/LoadingBlog";
 
 //styles
 import { Main, GridBlog, Footer } from "./styles";

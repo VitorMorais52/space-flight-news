@@ -1,13 +1,13 @@
 import Modal from "react-modal";
 
 //utils
-import { dateFormatToShow } from "../../utils/formatFunctions";
+import { dateFormatToShow } from "../../../utils/formatFunctions";
 
 //types
-import { BlogProps } from "../../types/Blog";
+import { BlogProps } from "../../../types/Blog";
 
 //components
-import Image from "../../components/Image";
+import Image from "../Image";
 
 //styles
 import { Container } from "./styles";

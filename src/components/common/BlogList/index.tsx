@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 //utils
-import { dateFormatToShow } from "../../utils/formatFunctions";
+import { dateFormatToShow } from "../../../utils/formatFunctions";
 
 //types
-import { BlogProps } from "../../types/Blog";
+import { BlogProps } from "../../../types/Blog";
 
 //components
 import BlogModal from "../BlogModal";
