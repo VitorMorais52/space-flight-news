@@ -14,3 +14,8 @@ export type BlogProps = {
   launches: ItemProps[];
   events: ItemProps[];
 };
+
+export type FiltersBlog = {
+  title_contains: string;
+  _sort: string;
+};

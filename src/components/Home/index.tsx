@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useQuery, useQueryClient } from "react-query";
-import { useLocation, useSearchParams } from "react-router-dom";
-import queryString from "query-string";
 import Modal from "react-modal";
+
+//hooks
+import useQueryParams from "../../hooks/useQueryParams";
 
 //services
 import api from "../../services/api";
@@ -22,18 +23,7 @@ Modal.setAppElement("#root");
 
 function Home() {
   const queryClient = useQueryClient();
-  const { search } = useLocation();
-  const [_, setSearchParams] = useSearchParams();
-
-  const { title_contains, _sort } = queryString.parse(search);
-
-  const initStateFilters = {
-    title_contains:
-      title_contains && typeof title_contains !== "object"
-        ? title_contains
-        : "",
-    _sort: _sort && typeof _sort !== "object" ? _sort : "",
-  };
+  const { initStateFilters, setQueryParams } = useQueryParams();
 
   const [filters, setFilters] = useState(initStateFilters);
   const [limitItems, setLimitItems] = useState(10);
@@ -50,7 +40,7 @@ function Home() {
   );
 
   useEffect(() => {
-    setSearchParams(filters);
+    setQueryParams(filters);
     queryClient.fetchQuery("blogs");
   }, [filters, limitItems]);
 
