@@ -20,13 +20,16 @@ type BlogComponentProps = {
 
 function Blog({ blog, index }: BlogComponentProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [openBlog, setOpenBlog] = useState<BlogProps | null>(null);
 
   function handleOpen() {
+    setOpenBlog(blog);
     setIsOpen(true);
   }
 
   function onRequestClose() {
     setIsOpen(false);
+    setOpenBlog(null);
   }
 
   return (
@@ -49,7 +52,14 @@ function Blog({ blog, index }: BlogComponentProps) {
           </button>
         </div>
       </Container>
-      <BlogModal onRequestClose={onRequestClose} isOpen={isOpen} blog={blog} />
+
+      {openBlog && (
+        <BlogModal
+          onRequestClose={onRequestClose}
+          isOpen={isOpen}
+          blog={blog}
+        />
+      )}
     </>
   );
 }
