@@ -12,7 +12,7 @@ function LoadingBlog({ quantityItems }: LoadingBlogProps) {
   return (
     <>
       {Array.from({ length: quantityItems }).map((_, index) => (
-        <Container index={index}>
+        <Container index={index} key={index}>
           <div className="text">
             <Skeleton variant="text" height={"45px"} />
             <div className="double-in-line">
