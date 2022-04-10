@@ -43,4 +43,3 @@ Access http://localhost:3000 in your browser
 ---
 
 ⌨️ This is a challenge by [Coodesh](https://coodesh.com/) 🔥
-⌨️ Developed by [Morais](https://github.com/VitorMorais52) 😊
