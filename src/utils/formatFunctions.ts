@@ -1,5 +1,7 @@
 export const dateFormatToShow = (dateISO: string) => {
   //dd/MM/yyyy HH:MM
+  if (!dateISO) return;
+
   const date = new Date(dateISO);
 
   const formatPad = (data: number): string => data.toString().padStart(2, "0");

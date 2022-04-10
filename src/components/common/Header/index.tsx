@@ -40,6 +40,7 @@ function Header({ filters, changeFilters }: HeaderProps) {
         <FormControl className="form-control" variant="outlined">
           <InputLabel htmlFor="outlined-adornment-search">Search</InputLabel>
           <OutlinedInput
+            data-testid={"input search"}
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             sx={{ paddingRight: "6px" }}
@@ -75,7 +76,7 @@ function Header({ filters, changeFilters }: HeaderProps) {
           <MenuItem value="publishedAt">Mais antigas</MenuItem>
         </Select>
       </div>
-      <a href="#" className="logo">
+      <a href="#" className="logo" data-testid={"logo-icon"}>
         <RocketLaunchIcon
           sx={{
             backgroundColor: "white",
