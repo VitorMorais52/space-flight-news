@@ -30,6 +30,12 @@ And now?
 Access http://localhost:3000 in your browser
 ```
 
+### 🔧 Tests
+
+```
+yarn test
+```
+
 ## 🛠️ Built with
 
 - [Vite](https://vitejs.dev/) - A build tool that aims to provide a faster and leaner development experience for modern web projects
