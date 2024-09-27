@@ -3,16 +3,22 @@ type ItemProps = {
   provider: string;
 };
 
-export type BlogProps = {
+export type Blog = {
   id: number;
   title: string;
   url: string;
-  imageUrl: string;
-  newsSite: string;
+  image_url: string;
+  news_site: string;
   summary: string;
-  publishedAt: string;
+  published_at: string;
   launches: ItemProps[];
   events: ItemProps[];
+};
+export type DataProps = {
+  count: number;
+  next: string | null;
+  previous: string | null;
+  results: Blog[];
 };
 
 export type FiltersBlog = {

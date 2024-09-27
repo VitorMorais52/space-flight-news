@@ -1,19 +1,19 @@
 import { render } from "@testing-library/react";
 import Modal from "react-modal";
 
-import { BlogProps } from "../../../types/Blog";
+import { Blog } from "../../../types/Blog";
 
 import BlogList from "./";
 
-const blogs: BlogProps[] = [
+const blogs: Blog[] = [
   {
     id: 1,
     title: "Post title",
     url: "",
-    imageUrl: "",
-    newsSite: "Site",
+    image_url: "",
+    news_site: "Site",
     summary: "Summary",
-    publishedAt: "2022-04-09T20:10:45.737Z",
+    published_at: "2022-04-09T20:10:45.737Z",
     launches: [],
     events: [],
   },
@@ -21,10 +21,10 @@ const blogs: BlogProps[] = [
     id: 2,
     title: "Post title 2",
     url: "",
-    imageUrl: "",
-    newsSite: "Blog",
+    image_url: "",
+    news_site: "Blog",
     summary: "Summary 2",
-    publishedAt: "2022-05-09T13:20:45.737Z",
+    published_at: "2022-05-09T13:20:45.737Z",
     launches: [],
     events: [],
   },

@@ -9,7 +9,7 @@ import useQueryParams from "../../../hooks/useQueryParams";
 import api from "../../../services/api";
 
 //types
-import { BlogProps } from "../../../types/Blog";
+import { DataProps } from "../../../types/Blog";
 
 //components
 import Header from "../../common/Header";
@@ -30,7 +30,7 @@ function Home() {
 
   const params = { _limit: limitItems, ...filters };
 
-  const { data } = useQuery<BlogProps[]>(
+  const { data } = useQuery<DataProps>(
     "blogs",
     async () => {
       const response = await api.get("/blogs", { params });
@@ -52,7 +52,11 @@ function Home() {
       />
       <Main>
         <GridBlog>
-          {data ? <BlogList list={data} /> : <LoadingBlog quantityItems={10} />}
+          {data ? (
+            <BlogList list={data.results} />
+          ) : (
+            <LoadingBlog quantityItems={10} />
+          )}
         </GridBlog>
       </Main>
       <Footer>

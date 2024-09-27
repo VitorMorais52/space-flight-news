@@ -1,18 +1,18 @@
 import { render } from "@testing-library/react";
 import Modal from "react-modal";
 
-import { BlogProps } from "../../../types/Blog";
+import { Blog } from "../../../types/Blog";
 
 import BlogModal from "./";
 
-const blog: BlogProps = {
+const blog: Blog = {
   id: 1,
   title: "Post title",
   url: "",
-  imageUrl: "",
-  newsSite: "",
+  image_url: "",
+  news_site: "",
   summary: "Summary",
-  publishedAt: "2022-04-09T20:10:45.737Z",
+  published_at: "2022-04-09T20:10:45.737Z",
   launches: [],
   events: [],
 };
